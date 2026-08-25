@@ -9,13 +9,26 @@
   <style>
     @page { size: letter; margin: 0; }
     * { box-sizing: border-box; margin: 0; padding: 0; font-variant-ligatures: none; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    html, body { background: #070707; margin: 0; padding: 0; width: 100%; min-height: 100vh; }
+    html, body { background: #070707; margin: 0; padding: 0; width: 100%; }
     .sheet { width: 8.5in; height: 11in; overflow: hidden; page-break-after: always; position: relative; background: #070707; color: #f4f2ee; font-family: "IBM Plex Sans", system-ui, sans-serif; }
     @media screen {
-      html, body { background: #070707; }
-      .sheet { width: 100%; max-width: none; height: auto; min-height: 100vh; overflow: visible; }
-      .pad { padding: 36px 6vw 72px; }
-      .foot { position: relative; left: auto; right: auto; bottom: auto; margin-top: 28px; padding: 0 6vw 28px; }
+      html, body { background: #070707; min-height: 0; }
+      body { padding: 28px 16px 96px; }
+      .sheet {
+        width: min(1040px, 100%);
+        max-width: 1040px;
+        height: auto;
+        min-height: 0;
+        overflow: visible;
+        margin: 0 auto 28px;
+        border: 1px solid rgba(255,255,255,0.12);
+        box-shadow: 0 18px 50px rgba(0,0,0,0.55);
+      }
+      .pad { padding: 32px 40px 28px; }
+      .foot { position: relative; left: auto; right: auto; bottom: auto; margin-top: 8px; padding: 0 40px 22px; }
+      h1, .cover-h { font-size: 28px; }
+      .quote { font-size: 22px; }
+      .bigyes { font-size: 36px; }
     }
     .navybar { height: 10px; background: #ff4c00; }
     .goldbar { height: 4px; background: #ff4c00; }
@@ -49,10 +62,10 @@
     <div class="navybar"></div><div class="goldbar"></div>
     <div class="pad">
       <p class="meta"><a href="./">← Packet</a> · Forward Deployed Software Engineer · Warp Speed</p>
-      <div class="stamp">A talk given at Informatica · while embedded at Dawn Foods</div>
+      <div class="stamp">A talk given at Informatica · while embedded at Dawn Foods · Warp Speed FDSE</div>
       <h1 class="cover-h">Customer satisfaction is worthless.</h1>
-      <h1 class="cover-h" style="color:#1e3a5f;margin-top:0;">Customer loyalty is priceless.</h1>
-      <p class="lede">Winning customers for life. The operating line I have lived on every plant floor since — and the reason Warp Speed gets an FDSE who will not hide behind a policy when the line is waiting.</p>
+      <h1 class="cover-h" style="color:#ff4c00;margin-top:0;">Customer loyalty is priceless.</h1>
+      <p class="lede">Winning customers for life. Warp Speed pioneered FDSE: embed, measure, leave a path. This is the talk I gave while still on the customer’s floor — the operating line I still run so the night shift still runs it at 2 a.m.</p>
       <div class="pull">“Once you realize that satisfaction is the lowest level of acceptable service, you at once understand the power of loyalty.”<span>Jeffrey Gitomer · Teal Book of Trust · 2008 — the line I stood on in that room</span></div>
       <p>Jeremy Panasuk. Informatica IPS / SEAL. Dawn Foods, Jackson, Michigan. I gave this talk to my own company while I was still on the customer’s floor. The slides were short. The notes were the work. This PDF is the talk plus every speaker note — the stories, the quotes, the lunch with John, the list we held ourselves to.</p>
       <p>I am sending it with my Warp Speed FDSE application so you can see the commitment, not a slogan. Palantir is a software provider. The people who run plants are the customers. Loyalty is the product after the product.</p>
@@ -100,7 +113,7 @@
       <p>Once you know who pays you, it is obvious: satisfaction is the minimum amount of service we can deliver. I was not in Jackson to be satisfactory. I was there so Dawn would still want Informatica in the building when I was gone — and so the warehouse load that used to take eight hours would take one. That is loyalty you can measure. They put it on informatica.com. They still quote it: “His knowledge not only of the Informatica suite but also at the operating system level has been truly invaluable.” IPS said I was a rock star out at Dawn. That is not a personality. That is day-by-day.</p>
       <div class="goldbox">
         <b>Why Warp Speed should care</b>
-        Foundry and AIP are software people use every day. Plants do not stay for a dashboard. They stay for the person who came back the next morning. The night shift is the customer. If they cannot run it at 2 a.m., I did not finish.
+        Warp Speed is embed, measure, leave a path. Foundry on the Manufacturing OS only wins if the night shift still runs it. Satisfaction is a dashboard they clap for once. Loyalty is the line still using it at 2 a.m. Dawn 8h→1h got used. If they cannot run it without me, I did not finish.
       </div>
     </div>
     <div class="foot">Jeremy Panasuk · Customer loyalty is priceless · 3 / 8</div>
@@ -186,7 +199,7 @@
     <div class="pad">
       <div class="stamp">07 · Still the operating line · Warp Speed FDSE</div>
       <h2>This is not a vintage slide deck. This is how an FDSE still shows up.</h2>
-      <p class="lede">I am applying to Palantir Warp Speed as a Forward Deployed Software Engineer. You pioneered the title. I have been doing the work. This talk is the proof that I already treated the plant as the person who pays me.</p>
+      <p class="lede">I am applying to Palantir Warp Speed as a Forward Deployed Software Engineer. You pioneered the title. You asked for embed, measure, leave a path. This talk is the proof I already treated the plant as the person who pays me.</p>
       <div class="bigyes">Yes — or help to get to yes.</div>
       <p>Dawn Foods: 8 hours to under 1. Micron fab, zero downtime. Mercedes +200%. Cargill oils plants. Horizon Milling, CFO Award. 19 of 20 crisis accounts. Then a 4070 so the same motion runs on agents. I want Foundry on the floor the same way Dawn wanted the next Informatica product — because they believed in the person in the room.</p>
       <div class="pull">Customer satisfaction is worthless. Customer loyalty is priceless. That was the title in 2008. That is still the job.<span>Jeremy Panasuk · New Auburn, Wisconsin · jpanasuk-netizen.github.io/for-warp-speed</span></div>
