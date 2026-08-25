@@ -50,8 +50,8 @@
     .btn.ghost { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
     .btn.ghost:hover { background: var(--ink); color: var(--bg); }
     .hero { padding: 56px 0 28px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: end; }
-    .lede { font-size: clamp(18px, 2.2vw, 24px); line-height: 1.35; max-width: 38ch; margin: 18px 0 16px; }
-    .meta { color: var(--muted); max-width: 48ch; }
+    .lede { font-size: clamp(16px, 1.8vw, 20px); line-height: 1.45; max-width: 62ch; margin: 18px 0 16px; }
+    .meta { color: var(--muted); max-width: 64ch; line-height: 1.5; }
     .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
     .portrait { border: 1px solid var(--line); }
     .portrait img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: 50% 18%; filter: contrast(1.08); }
@@ -122,8 +122,8 @@
       <div>
         <p class="kicker">Forward Deployed Software Engineer · Warp Speed · New York / Hybrid</p>
         <h1>You pioneered the <em>title</em>. I have been doing the work.</h1>
-        <p class="lede">Factory floor to boardroom. Unprepared data. Outcomes that hold. That is Warp Speed. That is the only job I have had for twenty years.</p>
-        <p class="meta">Palantir built FDSE. Informatica used me as the parachute closer — manufacturers, fabs, lines, and C-suites. Last 24 months I rebuilt the stack on a private GPU so the same motion runs on agents. U.S. person. Travel is not a lifestyle accessory. It was the job.</p>
+        <p class="lede">Factory floor to boardroom. Unprepared data. Outcomes that hold after I fly out. That is Warp Speed. That is the only job I have had for twenty years. Palantir named Forward Deployed Software Engineer. Informatica named it IPS / SEAL and then called me when the platform was already on fire. The motion is the same: sit with the operators until the real constraint is named, wrangle what exists instead of waiting for a clean ontology, ship a surface the night shift still runs, brief the board on the same facts.</p>
+        <p class="meta">Manufacturers, fabs, bakeries, lines, and C-suites. Last 24 months I rebuilt the stack on a private RTX 4070 so the same diagnostic runs on agents — measured GPU routing, four isolated Python processes, bounded MCP, no host-root. U.S. person. Travel up to 25% is below the tempo I already lived: the site was the office. I will be where the line is. Wisconsin is home. The work is on the floor.</p>
         <div class="hero-actions">
           <a class="btn" href="#jd">Open the brief</a>
           <a class="btn ghost" href="cover.html">Cover letter</a>
@@ -146,19 +146,19 @@
         <div class="grid2">
           <article class="cell">
             <h3>Factory floor</h3>
-            <p>Dawn Foods AS/400 journals. Micron fab sites. Mercedes longest workflows. Toyota Engine Management go-live. PepsiCo NA/LATAM. Cargill oils plants — business analyst overseeing plant ERP implementation. Horizon Milling time-dimension visibility. The data is never clean. The line does not wait.</p>
+            <p>Dawn Foods: PowerExchange CDC on AS/400 remote journals, warehouse load eight hours to under one, featured because the warehouse still ran it. Micron fab sites: 2,080 → 7,000 hours, PowerExchange, PowerCenter, Fast Clone, Big Data, zero downtime. Mercedes-Benz: longest workflows +200%, TCS kept the path. Toyota Engine Management go-live, every consultant 5/5. PepsiCo NA/LATAM v9→v10, zero data loss. Cargill oils plants — business analyst overseeing plant ERP implementation. Horizon Milling: time-dimension production visibility so accounting could see the floor, CFO Award 2005. The data is never clean. The line does not wait. Warp Speed is that sentence with Foundry and AIP in the hands.</p>
           </article>
           <article class="cell">
             <h3>Board room</h3>
-            <p>BNY Mellon Grid/HA with CEO Sohaib Abbasi. Kohl’s through senior VPs. JPMorgan Chase CoE roadmaps. $10M+ influenced. I can sit with a plant manager at 6 a.m. and an exec at 4 p.m. without changing dialects.</p>
+            <p>Bank of New York Mellon Grid/HA with senior VPs and Informatica CEO Sohaib Abbasi in the room — sales, services, support north of $2.3 million and growing. Kohl’s: Informatica v9 Grid/HA capacity and upgrade, target architecture on commodity (Cisco or IBM) and the cutover off AIX, current volumes plus a three-year growth curve, briefed through Senior VPs, about $2 million in software, proofs of concept on their data when vendor VMs were not enough. JPMorgan Chase: enterprise data-warehouse and Center of Excellence roadmaps with sales, regional managers, and IPS VPs. We reached the final two proposals. We did not close. I will not write that as a $10 million win. I can sit with a plant manager at 6 a.m. and an exec at 4 p.m. without changing dialects. Same facts. Two rooms.</p>
           </article>
           <article class="cell">
             <h3>Pain threshold</h3>
-            <p>20 troubled accounts entered. 19 recovered. Milwaukee insurer: three-month outage closed in two days — one buried DB2 driver. Palantir calls it increasing the pain threshold. Informatica called me when the platform was on fire.</p>
+            <p>Twenty troubled accounts entered. Nineteen recovered. A Milwaukee insurer sat dark for three months; we closed it in two days on one IBM DB2 driver setting buried in IBM documentation. Volkswagen Group of America wanted the complete Grid/HA stack in two weeks — bonded dual NIC, Oracle RAC on InfiniBand, three 8-core PowerCenter servers — while a parallel Data Quality implementation burned on the other side of the building. Live demo a day early. Four of their consultants shadowed and took notes. Palantir calls it increasing the pain threshold. Informatica called me when the platform was on fire. I still go.</p>
           </article>
           <article class="cell">
             <h3>AI on operations</h3>
-            <p>Not a slide. Private RTX 4070 lab, measured ~27× local decode after GPU routing, production agents, bounded MCP. Models accelerate. Unprepared manufacturing data still decides whether they land.</p>
+            <p>Not a slide. Private RTX 4070 lab: 1.39 tokens/sec CPU baseline to 37.47 after GPU routing, logged in SQLite. Four agents as four isolated Python processes — Systems, Architect, Synthesis, Validator — handing Pydantic JSON on local Ollama under WSL2. Dockroot-MCP so an agent sees Docker and the network without becoming host-root. Models accelerate. Unprepared manufacturing data still decides whether they land. AIP on a plant that has no ontology yet is the job I already ran under another name.</p>
           </article>
         </div>
       </div>
@@ -172,17 +172,17 @@
           <article class="layer">
             <p class="kicker">Architecture</p>
             <h3>Design with other engineers</h3>
-            <p>World-first Informatica Grid/HA + DR, 20+ nodes, four regions. PepsiCo v9→v10 zero data loss. I do not throw a prototype over a wall. I leave a system the next shift can run.</p>
+            <p>World-first Informatica Grid/HA plus disaster recovery on RHEL GFS: 20+ nodes across India, the UK, New York, and Chicago. I built DR for the app servers, the databases, and staging, then ran the US DR test. PepsiCo v9→v10 zero data loss. I do not throw a prototype over a wall. I leave a system the next shift can run — and a document with an owner on the cover so they are not guessing at 2 a.m.</p>
           </article>
           <article class="layer">
             <p class="kicker">Data + AI</p>
             <h3>Wrangling at scale</h3>
-            <p>Teradata, Hadoop, AS/400 CDC, DB2, Redshift, SQL Server. local_grid_suite benches in SQLite. Agents get a bounded surface so they do not hallucinate a SKU into existence.</p>
+            <p>Teradata, Hadoop, AS/400 CDC, DB2 on mainframe, Redshift, SQL Server. Dawn’s journals. Navy Federal’s CDC. MOBE at 99.99% on Talend 8 with GitLab CI/CD. local_grid_suite benches decode and prefill in SQLite so a claim has a log. Agents get a bounded surface so they do not hallucinate a SKU into existence. Unbounded context is how a model invents a part the line does not make.</p>
           </article>
           <article class="layer">
             <p class="kicker">Stakeholders</p>
             <h3>Technical teams to executives</h3>
-            <p>Playbooks adopted by TCS. Clients asked for me by name. “Rock star.” “One of the best Informatica has to offer.” The IPS artifacts are public: Environment Summary, Upgrade Roadmap, Phase review, v10 test deck. That is FDSE culture with receipts. <a href="playbook.html">Read the FDSE playbook</a>.</p>
+            <p>Playbooks adopted by TCS. Clients asked for me by name. Dawn: “His knowledge not only of the Informatica suite but also at the operating system level has been truly invaluable.” IPS sales: “He’s a rock star out at Dawn.” MF Global infrastructure: “You have sent one of the best that Informatica has to offer in Jeremy.” The IPS artifacts are public: Environment Summary, Upgrade Roadmap, Phase review, v10 test deck — Farmers, Mercedes-Benz Financial, Northwestern Mutual, Waddell &amp; Reed. Internal hostnames stay off this site. That is FDSE culture with receipts. <a href="playbook.html">Read the FDSE playbook</a>.</p>
           </article>
         </div>
       </div>
@@ -194,11 +194,11 @@
         <h2>Every requirement. Evidence.</h2>
         <details class="item" open>
           <summary><span class="tag">The original</span><h3>Embed with the customer. Solve the real problem.</h3><span>+</span></summary>
-          <div class="proof">Informatica IPS / SEAL. Side by side with the account, not a ticket queue. Discovery through production. Same motion Warp Speed describes from factory to boardroom.</div>
+          <div class="proof">Informatica IPS / SEAL. Side by side with the account, not a ticket queue. Discovery through production, then hypercare, then a named skill-up so the next wave does not need me in the chair. Same motion Warp Speed describes from factory to boardroom. I have not faked a Foundry badge. I have already done the embed: hear the floor, wrangle what exists, ship, measure, leave them running Tuesday.</div>
         </details>
         <details class="item">
           <summary><span class="tag">Manufacturing</span><h3>American industrial base — food, auto, fab, CPG</h3><span>+</span></summary>
-          <div class="proof">Dawn Foods warehouse 8h → 1h. Mercedes +200%. Toyota go-live 5/5. Micron 2,080 → 7,000 hours, zero downtime. Cargill oils plants: business analyst overseeing plant ERP implementation. Demantra (separate): demand planning — won Quarterly Award for Excellence, Oct 2006. Horizon Milling: time-dimension production visibility for accounting, CFO Award 2005. PepsiCo, Ace Hardware, Kohl’s.</div>
+          <div class="proof">Dawn Foods warehouse 8h → 1h. Mercedes +200%. Toyota go-live 5/5, $300k services + $500k licensing. Micron 2,080 → 7,000 hours, zero downtime, Consultant of the Year runner-up 2016. Cargill oils plants: business analyst overseeing plant ERP implementation. Demantra (separate): demand planning — Quarterly Award for Excellence, Oct 2006. Horizon Milling: time-dimension production visibility for accounting, CFO Award 2005. PepsiCo, Ace Hardware. Kohl’s is not a chip: v9 Grid/HA capacity and upgrade, AIX off to commodity, three-year growth, Senior VPs, ~$2M software, POCs on their data when vendor VMs were not enough. Volkswagen complete Grid/HA in two weeks, day early.</div>
         </details>
         <details class="item">
           <summary><span class="tag">Coder</span><h3>Python, SQL, systems. Honest about Java/C++.</h3><span>+</span></summary>
