@@ -3,34 +3,244 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jeremy Panasuk · Resume · Warp Speed</title>
+  <title>Jeremy Panasuk · Palantir Warp Speed FDSE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
   <style>
+    @page { size: letter; margin: 0; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; background: #070707; color: #f4f2ee; font-family: system-ui, sans-serif; }
-    header {
-      display: flex; align-items: center; justify-content: space-between; gap: 12px;
-      padding: 12px 18px; min-height: 56px;
-      border-bottom: 1px solid color-mix(in srgb, #ff4c00 35%, transparent);
-      font-size: 13px;
+    html, body { background: #fff; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    @media screen {
+      html, body { width: 100%; min-height: 0; background: #070707; }
+      body { padding: 0 16px 88px; display: flex; flex-direction: column; align-items: center; gap: 28px; }
+      .packet-bar { align-self: stretch; width: 100%; box-sizing: border-box; }
+      .sheet {
+        width: min(1040px, 100%);
+        max-width: 1040px;
+        height: auto;
+        min-height: 0;
+        overflow: visible;
+        flex-shrink: 0;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.22);
+      }
+      .pad { padding: 28px 36px 32px; }
+      .foot { position: relative; left: auto; right: auto; bottom: auto; margin-top: 12px; }
     }
-    header a { color: #f4f2ee; text-decoration: none; }
-    header a:hover { color: #ff4c00; }
-    .role { letter-spacing: 0.08em; text-transform: uppercase; font-size: 11px; opacity: 0.8; }
-    .btn {
+    @media print { .packet-bar { display: none !important; } }
+    .sheet {
+      width: 8.5in; height: 11in; overflow: hidden;
+      page-break-after: always; position: relative;
+      background: #070707; color: #f4f2ee;
+      font-family: "IBM Plex Sans", Arial, sans-serif;
+    }
+    .pad { padding: 0.30in 0.40in 0.34in; }
+    .kicker { font-family: "IBM Plex Mono", monospace; font-size: 7.2pt; letter-spacing: 0.2em; text-transform: uppercase; color: #ff4c00; }
+    h1 { font-size: 26pt; font-weight: 600; letter-spacing: -0.03em; line-height: 0.95; margin: 4px 0 4px; }
+    .tag { font-size: 10.2pt; font-style: italic; color: #d8d4cb; line-height: 1.25; margin: 5px 0 6px; max-width: 48ch; }
+    .tag em { color: #ff4c00; font-style: italic; }
+    .contact { font-size: 7.6pt; color: #9a958c; line-height: 1.4; }
+    .contact a { color: #ff4c00; text-decoration: none; }
+    .hero { display: grid; grid-template-columns: 1fr 1.08in; gap: 12px; }
+    .shot { width: 1.08in; height: 1.36in; object-fit: cover; object-position: 50% 12%; border: 1px solid #ff4c00; }
+    .metrics { display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; margin: 9px 0 8px; }
+    .m { border: 1px solid #2a2a28; background: #111; padding: 6px 5px 5px; text-align: center; }
+    .m b { display: block; font-size: 14pt; color: #ff4c00; line-height: 0.95; }
+    .m span { display: block; font-size: 5.8pt; letter-spacing: 0.06em; text-transform: uppercase; color: #9a958c; margin-top: 3px; font-weight: 600; }
+    h2 { font-family: "IBM Plex Mono", monospace; font-size: 7.2pt; letter-spacing: 0.16em; text-transform: uppercase; color: #ff4c00; margin: 8px 0 5px; font-weight: 500; border-bottom: 1px solid #2a2a28; padding-bottom: 3px; }
+    p { font-size: 7.9pt; line-height: 1.32; color: #c8c4bb; }
+    .who { font-size: 8.2pt; color: #e8e4dc; }
+    .layers { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
+    .layer { border: 1px solid #2a2a28; background: #111; padding: 7px 8px; }
+    .layer h3 { font-size: 9.5pt; margin-bottom: 3px; }
+    .layer p { font-size: 7.3pt; }
+    .labg { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .card { border: 1px solid #2a2a28; background: #111; padding: 7px 8px; }
+    .card h3 { font-size: 8.4pt; }
+    .card .n { color: #ff4c00; }
+    .jobhead { display: flex; justify-content: space-between; gap: 8px; font-size: 8.4pt; font-weight: 700; color: #f4f2ee; }
+    .jobhead .d { color: #ff4c00; white-space: nowrap; font-size: 7.5pt; font-family: "IBM Plex Mono", monospace; font-weight: 500; }
+    .reel { display: grid; grid-template-columns: 0.80in 1fr 0.80in 1fr; gap: 3px 7px; font-size: 7.5pt; line-height: 1.28; color: #c8c4bb; }
+    .reel .n { font-size: 10pt; color: #ff4c00; font-weight: 600; }
+    .quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 7px; }
+    .q { font-size: 7.3pt; font-style: italic; line-height: 1.28; padding: 7px 8px; border: 1px solid #2a2a28; border-left: 3px solid #ff4c00; background: #111; }
+    .q span { display: block; font-style: normal; font-size: 6.2pt; letter-spacing: 0.1em; text-transform: uppercase; color: #ff4c00; margin-top: 3px; font-weight: 700; }
+    .moment { margin-top: 8px; border: 1px solid #ff4c00; padding: 9px 11px; background: #111; }
+    .moment .lede { font-style: italic; font-size: 9.2pt; color: #f4f2ee; line-height: 1.28; margin-bottom: 6px; }
+    .moment .cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 9px; }
+    .moment h3 { font-family: "IBM Plex Sans", Arial, sans-serif; font-size: 8pt; letter-spacing: 0.08em; text-transform: uppercase; color: #ff4c00; margin-bottom: 3px; font-weight: 700; }
+    .moment p { font-size: 7.3pt; }
+    .gold { margin-top: 7px; border: 1px solid #5a3a16; padding: 7px 9px; }
+    .gold .t { font-size: 6.8pt; letter-spacing: 0.12em; text-transform: uppercase; color: #ff4c00; font-weight: 700; }
+    .skills { font-size: 7.3pt; line-height: 1.36; }
+    .skills strong { color: #ff4c00; }
+    .foot { position: absolute; left: 0.40in; right: 0.40in; bottom: 0.15in; font-size: 6.8pt; letter-spacing: 0.1em; color: #6a6660; text-align: center; font-family: "IBM Plex Mono", monospace; }
+    .hits { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 8px; }
+    .hit { border: 1px solid #2a2a28; background: #111; padding: 8px 9px; }
+    .hit h3 { font-size: 8.2pt; color: #ff4c00; margin-bottom: 3px; letter-spacing: 0.06em; text-transform: uppercase; }
+    .hit p { font-size: 7.5pt; line-height: 1.32; color: #c8c4bb; }
+    .strike {
+      margin-top: 7px; background: #ff4c00; color: #070707;
+      padding: 8px 10px; font-size: 8.4pt; font-weight: 600; line-height: 1.3;
+    }
+  
+    .packet-bar {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 12px 18px; min-height: 56px; position: sticky; top: 0; z-index: 50;
+      background: #070707; color: #f4f2ee;
+      border-bottom: 1px solid rgba(255,76,0,0.28); font-size: 13px; font-family: system-ui, sans-serif;
+    }
+    .packet-bar a { color: #f4f2ee; text-decoration: none; }
+    .packet-bar a:hover { color: #ff4c00; }
+    .packet-bar .role { letter-spacing: 0.08em; text-transform: uppercase; font-size: 11px; opacity: 0.8; }
+    .packet-bar .btn {
       display: inline-block; background: #ff4c00; color: #070707;
       text-decoration: none; padding: 10px 14px; font-size: 12px;
       letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600;
     }
-    .btn:hover { filter: brightness(1.08); color: #070707; }
-    iframe { width: 100%; height: calc(100% - 56px); border: 0; background: #fff; }
-  </style>
+    </style>
 </head>
 <body>
-  <header>
-    <a href="./">← Packet</a>
-    <span class="role">Palantir · FDSE Warp Speed</span>
-    <a class="btn" href="JAP_PALANTIR_WARP_SPEED.pdf" download>Download PDF</a>
-  </header>
-  <iframe src="JAP_PALANTIR_WARP_SPEED.pdf" title="Jeremy Panasuk resume"></iframe>
+
+<header class="packet-bar">
+  <a href="./">← Packet</a>
+  <span class="role">Palantir · FDSE Warp Speed</span>
+  <a class="btn" href="JAP_PALANTIR_WARP_SPEED.pdf" download>Download PDF</a>
+</header>
+
+  <div class="sheet">
+    <div class="pad">
+      <div class="hero">
+        <div>
+          <div class="kicker">Forward Deployed Software Engineer · Warp Speed · Palantir · New York / Hybrid</div>
+          <h1>Jeremy Panasuk</h1>
+          <p class="tag">You pioneered the <em>title</em>. I have been doing the work — factory floor to boardroom — since 2005.</p>
+          <div class="contact">
+            U.S. person · New Auburn, WI · 715-970-0204 · jpanasuk@gmail.com<br />
+            Packet: jpanasuk-netizen.github.io/for-warp-speed · github.com/jpanasuk-netizen · huggingface.co/jpanasuk<br />
+            linkedin.com/in/jeremy-p-34203322
+          </div>
+        </div>
+        <img class="shot" src="assets/portrait.jpg" alt="Jeremy Panasuk" />
+      </div>
+      <div class="metrics">
+        <div class="m"><b>19/20</b><span>Crisis accounts recovered</span></div>
+        <div class="m"><b>8h→1h</b><span>Dawn Foods manufacturing</span></div>
+        <div class="m"><b>7,000h</b><span>Micron fab · zero downtime</span></div>
+        <div class="m"><b>+200%</b><span>Mercedes longest jobs</span></div>
+        <div class="m"><b>~27×</b><span>Local decode after routing</span></div>
+      </div>
+      <p class="who">Warp Speed FDSEs sit with manufacturers from the line to the exec table and make unprepared data drive operations. That is Informatica IPS/SEAL: embed, find the bottleneck under the symptom, leave a system the next shift can run. Last 24 months: private RTX 4070 lab, measured agents, bounded MCP. Travel was the job for eleven years. I will be where the line is.</p>
+
+      <h2>01 — Core FDSE motion</h2>
+      <div class="layers">
+        <div class="layer">
+          <h3>Floor + boardroom</h3>
+          <p>Dawn, Micron, Mercedes, Toyota, PepsiCo, Cargill oils plants, Horizon Milling, Ace, Kohl’s. BNY Mellon with CEO Sohaib Abbasi. Kohl’s through senior VPs. Same dialect at 6 a.m. and 4 p.m.</p>
+        </div>
+        <div class="layer">
+          <h3>Architecture + ship</h3>
+          <p>World-first Grid/HA + DR, 20+ nodes, four regions. PepsiCo v9→v10 zero data loss. Own the path from ideation to production. Playbooks so the next plant is faster.</p>
+        </div>
+        <div class="layer">
+          <h3>Data + AI</h3>
+          <p>Teradata, Hadoop, AS/400 CDC, DB2, Redshift. Python telemetry. Production WhatsApp agents. Models accelerate. Manufacturing data still decides whether they land.</p>
+        </div>
+      </div>
+
+      <h2>02 — Independent lab · Aug 2024 – Present</h2>
+      <div class="labg">
+        <div class="card"><h3><span class="n">4070</span> Tabby Tavern Stack</h3><p>Private LLM on RTX 4070 / WSL2: TabbyAPI EXL3, Ollama, Open WebUI, CUDA. huggingface.co/jpanasuk/tabby-tavern-stack</p></div>
+        <div class="card"><h3><span class="n">27×</span> Local Grid Suite</h3><p>Discover, bench decode/prefill, GPU routing, SQLite, CLI + PDF. 1.39 → 37.47 tok/s after routing. Warm stream ~76 tok/s.</p></div>
+        <div class="card"><h3><span class="n">MCP</span> Dockroot-MCP</h3><p>Agents see Docker/network. They do not get host-root. Measure the boundary, then hand the agent the boundary.</p></div>
+        <div class="card"><h3><span class="n">Agents</span> OpenClaw + pipeline</h3><p>Systems → architect → validator. Production WhatsApp agents, 10+ skills. Multi-provider routing with cloud failover.</p></div>
+      </div>
+      <p style="margin-top:6px;">Also retained through 2025 for Informatica production rescue: Grid/HA, PowerExchange CDC, IDQ, v9/v10, SOAP/REST, install-to-go-live.</p>
+
+      <div class="moment">
+        <p class="lede">Two years of laydown. Not idle — a rebuild. I stood up the lab, measured it, published it, and set one goal: put that stack on American operations that still run on journals, SOAP, and tribal knowledge. Warp Speed is that job.</p>
+        <div class="cols">
+          <div><h3>The rebuild</h3><p>Off the conveyor on purpose. Agents, bounded MCP, inference that reports numbers. Same diagnostic playbook as the parachute years. New substrate.</p></div>
+          <div><h3>The situation</h3><p>U.S. person. Wisconsin home. High autonomy. 25% travel is below the tempo I already lived. Hybrid New York + customer sites: I show up on the floor.</p></div>
+          <div><h3>The window</h3><p>Available now. Not splitting attention with a job I am trying to leave. Ready to go in alone and come back with something that runs.</p></div>
+        </div>
+      </div>
+
+      <div class="hits">
+        <div class="hit">
+          <h3>Hour one on the floor</h3>
+          <p>I do not ask for a clean schema. I walk the line, find the unofficial definition of a good part, and pull the journal the MES does not see. What broke last Tuesday at 2 a.m. is the ontology. Warp Speed’s job is to make that ontology executable. That is the work I already do.</p>
+        </div>
+        <div class="hit">
+          <h3>Two days, not three months</h3>
+          <p>Milwaukee insurer: platform dark for three months. I closed it in two days — one buried IBM DB2 driver setting. Palantir calls it increasing the pain threshold. I call it reading the evidence before touching the config. The line does not care about your architecture diagram.</p>
+        </div>
+      </div>
+      <div class="strike">AI now writes code faster than engineers. American plants still run on clipboards, cold calls, and the guy who has been there 26 years. I am the conversion layer. I am not applying to learn FDSE. You named my job.</div>
+    </div>
+    <div class="foot">Jeremy Panasuk · Palantir Warp Speed · Forward Deployed Software Engineer · 1 / 2</div>
+  </div>
+
+  <div class="sheet">
+    <div class="pad">
+      <div class="kicker">Jeremy Panasuk · U.S. person · 715-970-0204 · jpanasuk@gmail.com · jpanasuk-netizen.github.io/for-warp-speed</div>
+
+      <h2>03 — Sr. Software Developer, Talend · MOBE</h2>
+      <div class="jobhead"><div>Minneapolis · production data integration</div><div class="d">Jul 2023 – Aug 2024</div></div>
+      <p>Talend 8 on a live platform. GitLab CI/CD. Redshift + SQL Server. 99.99% stability. On-call incident command.</p>
+
+      <h2>04 — Informatica Specialist · Tata Consultancy Services</h2>
+      <div class="jobhead"><div>PepsiCo · Ameriprise · Ace Hardware</div><div class="d">Mar 2020 – Dec 2021</div></div>
+      <p><b>PepsiCo</b> Grid/HA + DIH across NA/LATAM. v9→v10 zero data loss. Teradata → Big Data (~40% analytics). <b>Ameriprise</b> IDQ / EDC / Axon. <b>Ace Hardware</b> PowerCenter → Big Data with business + QA.</p>
+
+      <h2>05 — Consulting Manager / SEAL · Informatica · Jun 2008 – Oct 2019</h2>
+      <p style="margin-bottom:6px;">Analyst → Consulting Manager. Teams of 7–14. v7–v10 upgrade specialist. Consultant of the Year runner-up (2016). Parachute closer: 20 in, 19 recovered. This is FDSE with a different logo on the badge.</p>
+      <div class="reel">
+        <div class="n">8h→1h</div><div><b>Dawn Foods</b> — manufacturing CDC on AS/400. Featured on informatica.com.</div>
+        <div class="n">7,000h</div><div><b>Micron</b> — fab EDW. $3M extensions. Zero downtime.</div>
+        <div class="n">+200%</div><div><b>Mercedes-Benz</b> — longest workflows. Playbook adopted by TCS.</div>
+        <div class="n">$800k</div><div><b>Toyota</b> — Engine Management go-live. All consultants 5/5.</div>
+        <div class="n">20+ nodes</div><div><b>MF Global</b> — world-first Grid/HA + DR. India, UK, NY, Chicago.</div>
+        <div class="n">$2.3M+</div><div><b>BNY Mellon</b> — Grid/HA with senior VPs and CEO.</div>
+        <div class="n">$10M+</div><div><b>JPMorgan Chase</b> — DW / CoE roadmaps. ELA + PS.</div>
+        <div class="n">~$2M</div><div><b>Kohl’s</b> — Informatica v9 Grid/HA capacity planning and upgrade, including multiple high-availability and Grid components. Target Grid/HA on commodity hardware (Cisco or IBM); cutover off AIX. Current volumes plus a 3-year growth curve; sized to that. Briefed through Senior VPs. Closed ~$2 million in Informatica software. DQ / MDM POCs when Informatica VM labs were not enough for their data.</div>
+        <div class="n">2 wks</div><div><b>Volkswagen Group of America</b> — complete Grid/HA in two weeks: bonded network / dual NICs, Oracle RAC on InfiniBand, three 8-core PowerCenter servers. Live demo a day early. Four customer consultants shadowed. Parallel DQ on the other side of VW was burning down (pressure, not a DQ miss).</div>
+        <div class="n">$375k</div><div><b>Unnamed customer</b> — two-week PowerCenter + Data Quality full build on their metal (not the Informatica VM lab), plus complete use-case analysis. Closed $375k the night before quarter end.</div>
+        <div class="n">$600k</div><div><b>Smith &amp; Nephew</b> — FDA-validated platform.</div>
+        <div class="n">3,000h</div><div><b>Navy Federal</b> — architecture through go-live.</div>
+        <div class="n">−50%</div><div><b>West Bend Mutual</b> — real-time SOAP/XML cut in half.</div>
+        <div class="n">v9</div><div><b>Harvard</b> — Version 9. Off-load Solaris through hypercare.</div>
+      </div>
+
+      <div style="margin-top:8px;">
+        <div class="jobhead"><div>Sr. Integration Engineer · Prime Therapeutics</div><div class="d">Jan 2007 – Jun 2008</div></div>
+        <p>Medicare + MTM data marts. Delivered above grade-level.</p>
+      </div>
+      <div style="margin-top:5px;">
+        <div class="jobhead"><div>Business Analyst, Oils Plants · Integration Associate · Cargill</div><div class="d">Dec 2004 – Jan 2007</div></div>
+        <p><b>Oils plants:</b> business analyst overseeing plant ERP implementation — live operations, not a sandbox. <b>Demantra (separate):</b> demand planning. Won the Quarterly Award for Excellence, Oct 2006, for Demantra. <b>Horizon Milling:</b> production visibility on a time dimension so plants and accounting could see the same facts — CFO Award 2005 (six / year). 24/7 warehouse/ODS.</p>
+      </div>
+
+      <div class="quotes">
+        <div class="q">“His knowledge not only of the Informatica suite but also at the operating system level has been truly invaluable.”<span>Dawn Foods · client</span></div>
+        <div class="q">“He’s a rock star out at Dawn. The customer loves him and the sales team has been leaning on him hard.”<span>Informatica IPS · sales</span></div>
+        <div class="q">“You have sent one of the best that Informatica has to offer in Jeremy.”<span>MF Global · infrastructure</span></div>
+        <div class="q">“I trusted that Jeremy would deliver, with quality… exceeded the expectations at someone of his grade level.”<span>Prime Therapeutics</span></div>
+      </div>
+
+      <div class="gold">
+        <div class="t">Unstructured instincts · Secret Key / Fireworks Forever · 1996–2004</div>
+        <p>Class B shooter. $800K+ seasonal inventory. No schema, no second take. Customer loyalty is priceless.</p>
+      </div>
+
+      <h2>06 — Stack · requirements</h2>
+      <p class="skills"><strong>Code</strong> · Python · SQL · JavaScript/TypeScript · Docker · Linux/WSL2 · GitLab CI/CD · APIs<br />
+      <strong>Data / AI</strong> · Informatica PowerCenter · Grid/HA · PowerExchange CDC · Talend 8 · IDQ · EDC · Teradata · Hadoop · Redshift · Oracle · SQL Server · DB2 · Ollama · MCP · RAG<br />
+      <strong>Domain</strong> · Manufacturing · oils plants · plant ERP implementation · Demantra demand planning · Horizon Milling · auto · fab · CPG · food · supply chain · banking · insurance<br />
+      <strong>This posting</strong> · U.S. person · 1+ years (20+) · travel to client sites · hybrid NYC + floor · BBA MIS, UW–Eau Claire · Informatica Certified Specialist (Admin, Big Data Admin, PowerCenter Developer I &amp; II)</p>
+    </div>
+    <div class="foot">Jeremy Panasuk · Palantir Warp Speed · Forward Deployed Software Engineer · 2 / 2</div>
+  </div>
 </body>
 </html>
